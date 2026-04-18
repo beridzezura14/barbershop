@@ -6,6 +6,9 @@ html {
 
 body {
   font-family: var(--font-body), sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(184, 149, 99, 0.08), transparent 28%),
+    #111111;
 }
 
 h1,
@@ -13,4 +16,81 @@ h2,
 h3,
 .font-display {
   font-family: var(--font-display), serif;
+}
+
+@keyframes goldFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.42;
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) scale(1.04);
+    opacity: 0.78;
+  }
+}
+
+@keyframes goldShimmer {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.gold-ambient {
+  position: relative;
+  isolation: isolate;
+}
+
+.gold-ambient::before {
+  content: "";
+  position: absolute;
+  left: 4%;
+  bottom: 10%;
+  width: 220px;
+  height: 220px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(184, 149, 99, 0.18), transparent 70%);
+  filter: blur(10px);
+  animation: goldFloat 7s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gold-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 42%,
+    rgba(184, 149, 99, 0.16) 50%,
+    transparent 58%,
+    transparent 100%
+  );
+  transform: translateX(-120%);
+  animation: goldShimmer 6.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.gold-card {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    background-color 220ms ease;
+}
+
+.gold-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 149, 99, 0.42);
+  box-shadow: 0 16px 40px rgba(184, 149, 99, 0.08);
 }

@@ -6,7 +6,7 @@ export default function About() {
       id="about"
       className="mx-auto scroll-mt-24 grid w-[92%] overflow-hidden border border-t-0 border-[#2b241d] bg-[#e6d8c7] text-[#181411] sm:w-[90%] lg:min-h-[760px] lg:grid-cols-[minmax(0,0.92fr)_minmax(360px,1fr)]"
     >
-      <div className="order-2 flex flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:order-1 lg:px-14 lg:py-16">
+      <div className="order-1 flex flex-col justify-center px-4 py-8 sm:px-6 sm:py-10 md:px-10 lg:order-2 lg:px-14 lg:py-16">
         <p className="text-[10px] uppercase tracking-[0.28em] text-[#8d6d47] sm:text-[11px] sm:tracking-[0.38em]">
           ჩვენს შესახებ
         </p>
@@ -69,7 +69,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="relative order-1 min-h-[300px] sm:min-h-[420px] lg:order-2 lg:min-h-full">
+      <div className="relative order-2 min-h-[300px] sm:min-h-[420px] lg:order-1 lg:min-h-full">
         <img
           src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1600&q=80"
           alt="ბარბერ სტუდია"
