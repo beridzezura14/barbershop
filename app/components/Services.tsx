@@ -40,7 +40,7 @@ export default function Services() {
         {services.map(([title, price, description]) => (
           <article
             key={title}
-            className="gold-card gold-shimmer border border-white/10 bg-[#191613] p-4 sm:p-6"
+            className="border border-white/10 bg-[#191613] p-4 transition hover:border-[#b89563]/40 sm:p-6"
           >
             <div className="flex items-start justify-between gap-3 border-b border-white/10 pb-4 sm:gap-4 sm:pb-5">
               <div>

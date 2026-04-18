@@ -3,7 +3,7 @@
 export default function MapSection() {
   return (
     <section className="gold-ambient mx-auto w-[92%] overflow-hidden border border-t-0 border-[#2b241d] bg-[#0f0d0b] text-white sm:w-[90%]">
-      <div className="flex flex-col gap-4 border-b border-white/10 px-4 py-6 sm:px-6 sm:py-8 md:flex-row md:items-end md:justify-between md:px-10 lg:px-14">
+      <div className="fade-up flex flex-col gap-4 border-b border-white/10 px-4 py-6 sm:px-6 sm:py-8 md:flex-row md:items-end md:justify-between md:px-10 lg:px-14">
         <div>
           <p className="text-[10px] uppercase tracking-[0.28em] text-[#b89563] sm:text-[11px] sm:tracking-[0.38em]">
             რუკა
@@ -19,7 +19,7 @@ export default function MapSection() {
         </div>
       </div>
 
-      <div className="relative h-[320px] w-full overflow-hidden sm:h-[380px] lg:h-[440px]">
+      <div className="fade-up delay-1 relative h-[320px] w-full overflow-hidden sm:h-[380px] lg:h-[440px]">
         <iframe
           title="BarberShop location map"
           src="https://www.google.com/maps?q=Chavchavadze%20Avenue%2025,%20Tbilisi&z=15&output=embed"

@@ -39,6 +39,17 @@ h3,
   }
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .gold-ambient {
   position: relative;
   isolation: isolate;
@@ -93,4 +104,39 @@ h3,
   transform: translateY(-4px);
   border-color: rgba(184, 149, 99, 0.42);
   box-shadow: 0 16px 40px rgba(184, 149, 99, 0.08);
+}
+
+.fade-up {
+  opacity: 0;
+  animation-name: fadeUp;
+  animation-duration: 0.95s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  animation-fill-mode: both;
+  will-change: transform, opacity;
+}
+
+.delay-1 {
+  animation-delay: 0.08s;
+}
+
+.delay-2 {
+  animation-delay: 0.16s;
+}
+
+.delay-3 {
+  animation-delay: 0.24s;
+}
+
+.delay-4 {
+  animation-delay: 0.32s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gold-ambient::before,
+  .gold-shimmer::after,
+  .fade-up {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
