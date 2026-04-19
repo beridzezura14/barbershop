@@ -1,5 +1,7 @@
 import { Noto_Sans_Georgian, Noto_Serif_Georgian } from "next/font/google";
+import AnimationObserver from "./components/AnimationObserver";
 import Header from "./components/Header";
+import { LanguageProvider } from "./components/LanguageProvider";
 import "./globals.css";
 
 const bodyFont = Noto_Sans_Georgian({
@@ -22,10 +24,11 @@ export default function RootLayout({
   return (
     <html lang="ka" className={`${bodyFont.variable} ${displayFont.variable}`}>
       <body className="bg-[#111111] font-[family:var(--font-body)]">
-        <Header />
-        <div>
-          {children}
-        </div>  
+        <LanguageProvider>
+          <AnimationObserver />
+          <Header />
+          <div>{children}</div>
+        </LanguageProvider>
       </body>
     </html>
   );

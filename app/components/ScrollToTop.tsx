@@ -2,9 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { ChevronUp } from "lucide-react";
+import { useLanguage } from "./LanguageProvider";
+import { getSiteContent } from "../lib/siteContent";
 
 export default function ScrollToTop() {
+  const { language } = useLanguage();
   const [visible, setVisible] = useState(false);
+  const content = getSiteContent(language);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +31,10 @@ export default function ScrollToTop() {
     <button
       type="button"
       onClick={scrollToTop}
-      aria-label="ზემოთ ასვლა"
+      aria-label={content.scrollToTopLabel}
       className={`fixed right-5 bottom-5 z-50 inline-flex h-12 w-12 items-center justify-center border border-[#b89563]/40 bg-[#11100e]/88 text-[#f3eadf] backdrop-blur-md transition-all duration-300 hover:border-[#b89563] hover:bg-[#b89563] hover:text-black ${
         visible
-          ? "translate-y-0 opacity-100 pointer-events-auto"
+          ? "pointer-events-auto translate-y-0 opacity-100"
           : "pointer-events-none translate-y-4 opacity-0"
       }`}
     >

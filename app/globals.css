@@ -108,11 +108,15 @@ h3,
 
 .fade-up {
   opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  will-change: transform, opacity;
+}
+
+.fade-up.is-visible {
   animation-name: fadeUp;
   animation-duration: 0.95s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
   animation-fill-mode: both;
-  will-change: transform, opacity;
 }
 
 .delay-1 {
