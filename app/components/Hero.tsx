@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { getSiteContent } from "../lib/siteContent";
 
@@ -62,10 +63,13 @@ export default function Hero() {
       </div>
 
       <div className="relative min-h-[320px] sm:min-h-[420px] lg:min-h-full">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1621607512022-6aecc4fed814?auto=format&fit=crop&w=1600&q=80"
           alt={hero.imageAlt}
-          className="absolute inset-0 h-full w-full object-cover"
+          fill
+          priority
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="absolute inset-0 object-cover"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(17,16,14,0.08),rgba(17,16,14,0.44))]" />
 

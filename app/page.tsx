@@ -9,7 +9,7 @@ import Services from "./components/Services";
 
 export default function Home() {
   return (
-    <div>
+    <main id="main-content">
       <Hero />
       <About />
       <Services />
@@ -18,6 +18,6 @@ export default function Home() {
       <MapSection />
       <Footer />
       <ScrollToTop />
-    </div>
+    </main>
   );
 }

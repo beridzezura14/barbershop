@@ -85,7 +85,7 @@ export default function Header() {
           Barber<span className="text-[#b89563]">Shop</span>
         </h1>
 
-        <nav className="hidden items-center gap-10 text-sm lg:flex">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-10 text-sm lg:flex">
           {content.nav.map((item) => (
             <a
               key={item.id}
@@ -103,6 +103,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setLanguage("ka")}
+              aria-pressed={language === "ka"}
               className={`cursor-pointer rounded-full px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] transition sm:text-xs ${
                 language === "ka"
                   ? "bg-[#b89563] text-black"
@@ -114,6 +115,7 @@ export default function Header() {
             <button
               type="button"
               onClick={() => setLanguage("en")}
+              aria-pressed={language === "en"}
               className={`cursor-pointer  rounded-full px-3 py-1.5 text-[10px] font-medium uppercase tracking-[0.18em] transition sm:text-xs ${
                 language === "en"
                   ? "bg-[#b89563] text-black"
@@ -125,8 +127,12 @@ export default function Header() {
           </div>
 
           <button
+            type="button"
             ref={burgerButtonRef}
             onClick={() => setSidebarOpen(true)}
+            aria-label="Open menu"
+            aria-controls="mobile-sidebar"
+            aria-expanded={sidebarOpen}
             className="group flex w-12 cursor-pointer flex-col gap-[6px] p-4"
           >
             <span className="mr-3 h-[2px] w-9 bg-[#f3eadf] transition-all duration-300 group-hover:mr-0 group-hover:w-12" />
@@ -136,7 +142,9 @@ export default function Header() {
       </div>
 
       <div
+        id="mobile-sidebar"
         ref={sidebarRef}
+        aria-hidden={!sidebarOpen}
         className={`fixed inset-y-0 right-0 z-50 h-[100dvh] w-[340px] transition-transform duration-300 ${
           sidebarOpen ? "translate-x-0" : "translate-x-full"
         }`}
@@ -144,7 +152,12 @@ export default function Header() {
         <div className="flex h-full flex-col overflow-y-auto border-l border-white/10 bg-[#11100e] backdrop-blur-xl">
           <div className="flex items-center justify-between border-b border-white/10 p-[23px]">
             <div />
-            <button onClick={() => setSidebarOpen(false)} className="cursor-pointer" type="button">
+            <button
+              onClick={() => setSidebarOpen(false)}
+              className="cursor-pointer"
+              type="button"
+              aria-label="Close menu"
+            >
               <X size={22} />
             </button>
           </div>
@@ -195,13 +208,14 @@ export default function Header() {
 
             <div className="mt-4 flex gap-3">
               {[InstagramIcon, FacebookIcon, TikTokIcon].map((Icon, index) => (
-                <a
+                <button
                   key={index}
-                  href="#"
+                  type="button"
+                  aria-label={["Instagram", "Facebook", "TikTok"][index]}
                   className="rounded-xl border border-white/10 p-3 transition hover:border-[#b89563] hover:bg-[#b89563] hover:text-black"
                 >
                   <Icon size={18} />
-                </a>
+                </button>
               ))}
             </div>
           </div>

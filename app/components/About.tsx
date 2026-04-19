@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "./LanguageProvider";
 import { getSiteContent } from "../lib/siteContent";
 
@@ -56,10 +57,12 @@ export default function About() {
       </div>
 
       <div className="relative order-2 min-h-[300px] sm:min-h-[420px] lg:order-1 lg:min-h-full fade-up delay-1">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=1600&q=80"
           alt={about.imageAlt}
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          fill
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="absolute inset-0 object-cover object-center"
         />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,20,17,0.08),rgba(24,20,17,0.28))]" />
 
