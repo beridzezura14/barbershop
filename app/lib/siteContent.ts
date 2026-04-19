@@ -188,17 +188,17 @@ export const siteContent: Record<Language, SiteDictionary> = {
         },
         {
           title: "არასტანდარტული თმა",
-          price: "₾35-40",
+          price: "₾35",
           description: "კომპლექსური ჭრა და ინდივიდუალურად მორგებული ფორმა.",
         },
         {
           title: "ბავშვის მომსახურეობა",
-          price: "₾35-40",
+          price: "₾35",
           description: "კომფორტული პროცესი და სუფთა, მოწესრიგებული შედეგი.",
         },
         {
           title: "წვერის კორექცია",
-          price: "₾25-30",
+          price: "₾25",
           description: "წვერის ფორმის გასწორება და ხაზების დამუშავება.",
         },
         {
@@ -208,7 +208,7 @@ export const siteContent: Record<Language, SiteDictionary> = {
         },
         {
           title: "კომბო",
-          price: "₾70-80",
+          price: "₾70",
           description: "სრული პაკეტი - თმა + წვერი + დამატებითი.",
         },
       ],
@@ -372,17 +372,17 @@ export const siteContent: Record<Language, SiteDictionary> = {
         },
         {
           title: "Non-standard haircut",
-          price: "₾35-40",
+          price: "₾35",
           description: "More complex cutting with a shape tailored to you.",
         },
         {
           title: "Kids service",
-          price: "₾35-40",
+          price: "₾35",
           description: "Comfortable process and a neat, polished result.",
         },
         {
           title: "Beard correction",
-          price: "₾25-30",
+          price: "₾25",
           description: "Beard shaping and clean line detailing.",
         },
         {
@@ -392,7 +392,7 @@ export const siteContent: Record<Language, SiteDictionary> = {
         },
         {
           title: "Combo",
-          price: "₾70-80",
+          price: "₾70",
           description: "Full package - hair + beard + extras.",
         },
       ],
